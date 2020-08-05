@@ -23,9 +23,18 @@ public class MyRunner implements CommandLineRunner {
     public void run(String... args) throws Exception {
         logger.info("initializing students...");
 
-        studentRepository.save(new Student("Serega", "Serega", 1L, "Engineer", "email"));
-        studentRepository.save(new Student("Jorik", "Jorikov",  1L, "Engineer", "email"));
-        studentRepository.save(new Student("Vega", "Vefa",  1L, "Engineer", "email"));
+        studentRepository.save(new Student("Bugs", "Bunny",  2L, "Advanced Physics", "Bunny@email.com"));
+        studentRepository.save(new Student("Donald", "Duck", 1L, "Finances", "Duck@email.com"));
+        studentRepository.save(new Student("Scooby", "Doo",  1L, "Management", "Doo@email.com"));
+        studentRepository.save(new Student("SpongeBob", "SquarePants",  1L, "Electrical Engineer", "SquarePants@email.com"));
+        studentRepository.save(new Student("Duffy", "Duck", 3L, "Computer Science", "DDuck@email.com"));
+        studentRepository.save(new Student("Tom", "Cat",  1L, "Languages", "Cat@email.com"));
+        studentRepository.save(new Student("Mickey", "Mouse",  4L, "Statistics", "Mouse@email.com"));
+        studentRepository.save(new Student("Jerry", "Mouse", 2L, "Languages", "JMouse@email.com"));
+        studentRepository.save(new Student("Patric", "Star",  1L, "International Relations", "Star@email.com"));
+        studentRepository.save(new Student("Woody", "Woodpecker",  1L, "Civil Engineer", "Woodpecker@email.com"));
+        studentRepository.save(new Student("Scrooge", "McDuck", 6L, "Business", "McDuck@email.com"));
+        studentRepository.save(new Student("Squidward", "Tentacles",  4L, "Humanistic", "Tentacles@email.com"));
 
         studentRepository.findAll()
                 .forEach((student) -> logger.info("Initialized " + student.getFirstName()));

@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
+@CrossOrigin(origins = "http://localhost:3000")
 @RestController
 public class StudentController {
 
@@ -46,7 +47,7 @@ public class StudentController {
         List<Student> newStudentList = new LinkedList<>();
         studentRepository.findAll()
                 .forEach(student -> newStudentList.add(student));
-        newStudentList.set(id.intValue() - 1, newStudent);
+        newStudentList.set(id.intValue(), newStudent);
 
         studentRepository.saveAll(newStudentList);
         return newStudent;

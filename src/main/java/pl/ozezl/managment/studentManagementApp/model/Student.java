@@ -14,8 +14,6 @@ public class Student {
     private Long semester;
     private String faculty;
     private String email;
-    private String address;
-    private String phoneNumber;
 
     private Student() {}
 
@@ -73,22 +71,6 @@ public class Student {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
-
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
     }
 
     @Override
