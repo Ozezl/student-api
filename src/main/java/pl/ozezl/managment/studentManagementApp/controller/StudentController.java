@@ -43,14 +43,15 @@ public class StudentController {
     }
 
     @PutMapping("/students/{id}")
-    public Student changeStudent(@PathVariable("id") Long id, @RequestBody Student newStudent) {
+    public List<Student> changeStudent(@PathVariable("id") Long id, @RequestBody Student newStudent) {
         List<Student> newStudentList = new LinkedList<>();
         studentRepository.findAll()
                 .forEach(student -> newStudentList.add(student));
         newStudentList.set(id.intValue(), newStudent);
 
         studentRepository.saveAll(newStudentList);
-        return newStudent;
+
+        return newStudentList;
     }
 
     @DeleteMapping("/students/{id}")
